@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FE → BE</title>
+  <script>
+    async function fetchMessage() {
+      const res = await fetch('http://localhost:8080/api/message');
+      const data = await res.text();
+      document.getElementById('response').innerText = data;
+    }
+  </script>
+</head>
+<body>
+  <h1>Consuma servizio REST</h1>
+  <button onclick="fetchMessage()">Chiama API</button>
+  <p id="response"></p>
+</body>
+</html>
